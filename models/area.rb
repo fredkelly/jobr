@@ -1,8 +1,10 @@
 class Area
-    include DataMapper::Resource
+  include DataMapper::Resource
 
-    property :id, Serial
-    property :name, String
+  property :id, Serial
+  property :name, String
 
-    has n, :jobs
+  has n, :jobs
+  
+  alias_method :to_s, :name
 end
