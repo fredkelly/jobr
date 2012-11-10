@@ -3,7 +3,7 @@ class Job
     
     property :id, Serial
     property :title, String
-    property :description, String
+    property :description, Text
     property :closing_date, Date
     property :url, String
     property :sponsored, Boolean

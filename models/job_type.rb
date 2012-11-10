@@ -2,7 +2,7 @@ class JobType
     include DataMapper::Resource
 
     property :id, Serial
-    property :name, String
+    property :name, String, :length => 255
 
     has n, :jobs
 end
