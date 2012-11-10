@@ -1,6 +1,6 @@
 class Jobr < Sinatra::Base
 
   get '/' do
-    'Hello '
+    haml :index
   end
 end
