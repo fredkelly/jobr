@@ -16,6 +16,7 @@ class Jobr < Sinatra::Base
     ]
     js :application, '/js/application.js', [
       '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', # jQuery
+      '//maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyAVJT-Q5-R048zPyLuU4C0v0G7EWNQzNgY&sensor=false', # Maps
       '/js/global.js',
       '/js/heatmap.js'
     ]
