@@ -17,4 +17,12 @@ class Job
   belongs_to :job_type
   
   alias_method :to_s, :title
+  
+  def short_description
+    description.split[0..50].join(' ') + '...'
+  end
+  
+  def html_description
+    description.gsub("\n", '<br />')
+  end
 end

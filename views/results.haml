@@ -4,12 +4,12 @@
       %h4
         %a(href="/job/#{job.id}") #{job}, #{job.area}
         %small= job.company
-      %p= job.description
+      %p= job.short_description
       %ul.stats
         %li IBM
         %li
           Added
-          %time(datetime='') 5th Nov
+          %time(datetime="#{job.created_at}")= job.created_at.to_time.ago_in_words
         
 #aside
   = partial :map
