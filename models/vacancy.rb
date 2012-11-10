@@ -5,6 +5,6 @@ class Vacancy
     property :date, Date
     property :number, Integer
 
-    belongs_to :job_type
-    belongs_to :area
+    property :job_type_id, Integer
+    property :area_id, Integer
 end

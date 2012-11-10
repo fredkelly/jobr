@@ -5,5 +5,4 @@ class JobType
     property :name, String
 
     has n, :jobs
-    has n, :vacancies
 end
