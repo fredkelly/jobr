@@ -1,6 +1,5 @@
 %ol#results
   - @jobs.each do |job|
-    = job.sponsored
     %li(class="#{'sponsored' if job.sponsored}")
       %h4
         %a(href="/job/#{job.id}") #{job}, #{job.area}
@@ -13,4 +12,4 @@
           %time(datetime='') 5th Nov
         
 #aside
-  This is an aside.
+  = partial :map
