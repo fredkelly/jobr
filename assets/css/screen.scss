@@ -30,6 +30,21 @@ a, a:link, a:active, a:hover, a:visited {
   border-bottom: 1px solid #ddd;
 }
 
+/* Global button */
+button, a.button {
+  border: 0;
+  padding: 2px 5px;
+  background: #da6c00;
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.2);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 10pt;
+  font-weight: bold;
+  @include border-radius(5px);
+  vertical-align: middle;
+}
+
 #content, #footer {
   .container {
     padding: 20px 0;
@@ -83,12 +98,7 @@ form#search {
     border: 1px solid #ddd;
   }
   button {
-    border: 0;
-    background: #da6c00;
-    color: #fff;
-    border: 2px solid rgba(0,0,0,0.2);
-    cursor: pointer;
-    text-transform: uppercase;
+    border-width: 2px;
     font-size: 1em;
     /* compensate for border + smaller font */
     padding: 12px;
@@ -174,14 +184,45 @@ ol#results {
     }
   }
 }
+
+#job {
+  width: 640px;
+  float: left;
+
+  header {
+    margin-bottom: 1em;
+    
+    h2, p {
+      display: inline-block;
+    }
+    p {
+      margin-left: 0.5em;
+      padding-left: 0.5em;
+      border-left: 1px solid #ddd;
+    }
+  }
+  
+  p.links {
+    border-top: 1px solid #ddd;
+    margin-top: 1em;
+    padding-top: 1em;
+  }
+}
+
 #aside {
   width: 300px; /* 20px gutter */
   float: right;
+  
+  #map {
+    height: 100%;
+  }
 }
 
 /* Global footer */
 #footer {
   clear: both;
+  float: left;
+  width: 100%;
   font-size: .8em;
   color: #777;
   margin-top: 3em;

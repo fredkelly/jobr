@@ -1,5 +1,10 @@
 %article#job
   %header
     %h2= @job.title
-    %p Some meta data here..
-  = @plan.description
+    %p Created #{@job.created_at.to_time.ago_in_words}, closes in #{@job.closing_date.to_time.ago_in_words}.
+  %p= @job.description
+  %p.links
+    %a.button(href="#{@job.url}") View Job &rsaquo;
+
+#aside
+  %p Something..

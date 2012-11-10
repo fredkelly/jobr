@@ -13,3 +13,4 @@ end
 gem 'sass'
 gem 'coffee-script'
 gem 'sinatra-assetpack', require: 'sinatra/assetpack'
+gem 'time-lord'
