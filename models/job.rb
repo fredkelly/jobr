@@ -11,5 +11,8 @@ class Job
 
     property :created_at, DateTime
     property :updated_at, DateTime
+
+    belongs_to :area
+    belongs_to :company
 end
 

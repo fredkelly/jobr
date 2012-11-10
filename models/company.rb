@@ -3,4 +3,6 @@ class Company
     
     property :id, Serial
     property :name, String
+
+    has n, :jobs
 end
