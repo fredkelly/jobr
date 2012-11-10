@@ -1,4 +1,4 @@
-class Area
+class JobType
     include DataMapper::Resource
 
     property :id, Serial

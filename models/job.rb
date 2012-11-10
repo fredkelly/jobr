@@ -14,5 +14,6 @@ class Job
 
     belongs_to :area
     belongs_to :company
+    belongs_to :job_type
 end
 
