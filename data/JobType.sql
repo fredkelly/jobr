@@ -1,0 +1,17 @@
+INSERT into JobType (name) VALUES("Agriculture hunting and forestry");
+INSERT into JobType (name) VALUES("Fishing");
+INSERT into JobType (name) VALUES("Mining and quarrying");
+INSERT into JobType (name) VALUES("Manufacturing");
+INSERT into JobType (name) VALUES("Electricity gas and water supply");
+INSERT into JobType (name) VALUES("Construction");
+INSERT into JobType (name) VALUES("Wholesale and retail trade; repair of motor vehicles motorcycles and personal and household goods");
+INSERT into JobType (name) VALUES("Hotels and restaurants");
+INSERT into JobType (name) VALUES("Transport storage and communication");
+INSERT into JobType (name) VALUES("Financial intermediation");
+INSERT into JobType (name) VALUES("Real estate renting and business activities");
+INSERT into JobType (name) VALUES("Public administration and defence; compulsory social security");
+INSERT into JobType (name) VALUES("Education");
+INSERT into JobType (name) VALUES("Health and social work");
+INSERT into JobType (name) VALUES("Other community social and personal service activities");
+INSERT into JobType (name) VALUES("Private households with employed persons");
+INSERT into JobType (name) VALUES("Extra-territorial organisation and bodies");
