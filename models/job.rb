@@ -17,4 +17,19 @@ class Job
   belongs_to :job_type
   
   alias_method :to_s, :title
+  
+  def short_description
+    description.split[0..50].join(' ') + '...'
+  end
+  
+  def html_description
+    description.gsub("\n", '<br />')
+  end
+  
+  def terms
+    unless @terms
+      zemanta = ::TermExtraction::Zemanta.new(:api_key => 'vvflwgaafjrfvfjrqafb2uts', :context => description)
+    end
+    @terms = zemanta.terms
+  end
 end

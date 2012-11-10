@@ -2,9 +2,13 @@
   %header
     %h2= @job.title
     %p Created #{@job.created_at.to_time.ago_in_words}, closes in #{@job.closing_date.to_time.ago_in_words}.
-  %p= @job.description
-  %p.links
-    %a.button(href="#{@job.url}") View Job &rsaquo;
+  %p= @job.html_description
+  %ul.terms
+    - @job.terms.each do |term|
+      %li= term
+  .links
+    %a.button(href="#{@job.url}" target='_blank') View Job &rsaquo;
+    %p View the job on #{@job.company}&rsquo;s website.
 
 #aside
   %p Something..

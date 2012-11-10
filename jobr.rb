@@ -35,12 +35,12 @@ class Jobr < Sinatra::Base
   end
   
   get '/search' do
-    @jobs = Job.all
+    @jobs = Job.all('area.name.like' => "%#{params[:area]}%")
     haml :results
   end
   
   get '/job/:id' do
-    @job = Job.first(params[:id])
+    @job = Job.first(id: params[:id])
     haml :listing
   end
 
