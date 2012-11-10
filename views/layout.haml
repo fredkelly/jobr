@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title jobr.io &mdash; the smart way to find work.
+    = css :application, media: 'screen'
+    = js :application
+  %body
+    #header
+      .container
+        %h1
+          = img 'images/logo.png', alt: 'jobr.io &mdash; the smart way to find work.'
+        %p the smart way to find work.
+    #content
+      .container
+        = yield
+    #footer
+      .container
+        %p (c) copyright job.io 2012, Manchester Startup Weekend.
