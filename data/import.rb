@@ -3,4 +3,4 @@ conn = PGconn.open('ec2-54-243-62-232.compute-1.amazonaws.com', 5432, '', '', 'd
 
 vacancies = File.new('data/Vacancies.sql', 'r')
 
-conn.exec(vacancies.read)
+vacancies.read.each_line {|line| conn.exec(line)}
