@@ -4,7 +4,7 @@ require 'bundler/setup'
 Bundler.require
 
 DataMapper::Logger.new($stdout, :debug)
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/jobr.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://jobr@localhost:5432/jobr")
 
 Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
 
