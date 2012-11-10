@@ -25,4 +25,11 @@ class Job
   def html_description
     description.gsub("\n", '<br />')
   end
+  
+  def terms
+    unless @terms
+      zemanta = ::TermExtraction::Zemanta.new(:api_key => 'vvflwgaafjrfvfjrqafb2uts', :context => description)
+    end
+    @terms = zemanta.terms
+  end
 end

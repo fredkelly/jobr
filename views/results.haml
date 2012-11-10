@@ -6,7 +6,6 @@
         %small= job.company
       %p= job.short_description
       %ul.stats
-        %li IBM
         %li
           Added
           %time(datetime="#{job.created_at}")= job.created_at.to_time.ago_in_words
