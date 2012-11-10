@@ -23,7 +23,8 @@ $(function() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: sanFrancisco,
       zoom: 13,
-      mapTypeId: google.maps.MapTypeId.SATELLITE
+      disableDefaultUI: true,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
     var heatmap = new google.maps.visualization.HeatmapLayer({
