@@ -1,15 +1,17 @@
-!!!
-%html
-  %head
-    %title jobr.io &mdash; the smart way to find work.
-    = css :application, media: 'screen'
-  %body
-    #header
-      .container
-        %h1
-          = img 'images/logo.png', alt: 'jobr.io &mdash; the smart way to find work.'
-        %p the smart way to find work.
-    #content
-      .container
-    #footer
-      .container
+%form#search(action='search' method='get')
+  %p Get useful job insights now..
+  %fieldset
+    %input(type='text' name='role' placeholder='Chef, Plumber..')
+    %input(type='text' name='location' placeholder='Manchester..')
+    %button Search Now
+
+%ul#blurb
+  %li
+    %h3 Fast.
+    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus bibendum elit sed venenatis. Sed id ligula tortor. Donec eu urna id leo ornare convallis. Vestibulum ac leo nisl.
+  %li
+    %h3 Relevant.
+    %p Sed id ligula tortor. Donec eu urna id leo ornare convallis. Vestibulum ac leo nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus bibendum elit sed venenatis.
+  %li
+    %h3 Now.
+    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus bibendum elit sed venenatis. Sed id ligula tortor. Donec eu urna id leo ornare convallis. Vestibulum ac leo nisl.
