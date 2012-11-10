@@ -27,7 +27,13 @@ class Jobr < Sinatra::Base
   end
   
   get '/search' do
+    @jobs = Job.all
     haml :results
+  end
+  
+  get '/job/:id' do
+    @job = Job.first(params[:id])
+    haml :listing
   end
 
 end

@@ -1,33 +1,16 @@
 %ol#results
-  %li
-    %h4
-      %a(href='http://google.com') Web Developer, Salford
-      %small Microsoft
-    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus bibendum elit sed venenatis. Sed id ligula tortor. Donec eu urna id leo ornare convallis. Vestibulum ac leo nisl.
-    %ul.stats
-      %li IBM
-      %li
-        Added
-        %time(datetime='') 5th Nov
-  %li
-    %h4
-      Web Developer, Salford
-      %small Yahoo!
-    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus bibendum elit sed venenatis. Sed id ligula tortor. Donec eu urna id leo ornare convallis. Vestibulum ac leo nisl.
-    %ul.stats
-      %li
-        Added
-        %time(datetime='') 5th Nov
-  %li
-    %h4
-      Software Engineer, London
-      %small Facebook
-    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus bibendum elit sed venenatis. Sed id ligula tortor. Donec eu urna id leo ornare convallis. Vestibulum ac leo nisl.
-    %ul.stats
-      %li
-        Added
-        %time(datetime='') 5th Nov
+  - @jobs.each do |job|
+    = job.sponsored
+    %li(class="#{'sponsored' if job.sponsored}")
+      %h4
+        %a(href="/job/#{job.id}") #{job}, #{job.area}
+        %small= job.company
+      %p= job.description
+      %ul.stats
+        %li IBM
+        %li
+          Added
+          %time(datetime='') 5th Nov
         
-
 #aside
   This is an aside.
