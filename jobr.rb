@@ -16,7 +16,8 @@ class Jobr < Sinatra::Base
     ]
     js :application, '/js/application.js', [
       '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', # jQuery
-      '/js/global.js'
+      '/js/global.js',
+      '/js/heatmap.js'
     ]
     css_compression :sass
     #js_compression :coffee
