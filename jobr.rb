@@ -44,4 +44,8 @@ class Jobr < Sinatra::Base
     haml :listing
   end
 
+  get '/areas' do
+    Area.all.to_json
+  end
+
 end
