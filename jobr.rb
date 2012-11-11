@@ -35,7 +35,7 @@ class Jobr < Sinatra::Base
   end
   
   get '/search' do
-    @jobs = Job.all('area.name.like' => "%#{params[:area]}%")
+    @jobs = Job.search(params[:title], params[:area])
     haml :results
   end
   
