@@ -1,14 +1,19 @@
-%ol#results
-  - @jobs.each do |job|
-    %li(class="#{'sponsored' if job.sponsored}")
-      %h4
-        %a(href="/job/#{job.id}") #{job}, #{job.area}
-        %small= job.company
-      %p= job.short_description
-      %ul.stats
-        %li
-          Added
-          %time(datetime="#{job.created_at}")= job.created_at.to_time.ago_in_words
+- if @jobs.empty?
+  #primary
+    %h2 Whoops!..
+    %p Sorry, no matching jobs were found.
+- else   
+  %ol#results
+    - @jobs.each do |job|
+      %li(class="#{'sponsored' if job.sponsored}")
+        %h4
+          %a(href="/job/#{job.id}") #{job}, #{job.area}
+          %small= job.company
+        %p= job.short_description
+        %ul.stats
+          %li
+            Added
+            %time(datetime="#{job.created_at}")= job.created_at.to_time.ago_in_words
         
 #aside
   = partial :map

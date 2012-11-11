@@ -24,6 +24,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+#primary {
+  width: 640px;
+  float: left;
+}
+
 #content, #footer {
   .container {
     padding: 20px 0;
