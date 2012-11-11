@@ -251,6 +251,21 @@ ol#results {
   float: right;
 }
 
+#score {
+  color: #fff;
+  padding: 10px;
+  background: #af0000;
+  font-size: 3em;
+  margin-bottom: .5em;
+  text-align: center;
+  @include border-radius(5px);
+  border: 2px solid rgba(0,0,0,0.2);
+  
+  &.high {
+    background: #51a351;
+  }
+}
+
 #map {
   width: 100%;
 }
