@@ -4,6 +4,7 @@
     %title jobr.io &rsaquo; the smart way to find work.
     = css :application, media: 'screen'
     = js :application
+    = js :heatmap if request.path_info == '/search'
   %body
     #header
       .container

@@ -17,9 +17,12 @@ class Jobr < Sinatra::Base
     js :application, '/js/application.js', [
       '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', # jQuery
       '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization',
-      '/js/global.js',
+      '/js/global.js'
+    ]
+    js :heatmap, '/js/heatmap.js', [
       '/js/heatmap.js'
     ]
+    
     css_compression :sass
     #js_compression :coffee
   }
@@ -48,7 +51,7 @@ class Jobr < Sinatra::Base
     @job = Job.first(id: params[:id])
     haml :listing
   end
-
+  
   get '/areas/:role' do
     jobs = Job.all(:title.like => "%#{params[:title]}%")
     vacancies = Vacancy.all(:job_type_id => jobs[0].job_type.id)
