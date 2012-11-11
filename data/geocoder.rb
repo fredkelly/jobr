@@ -11,6 +11,7 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://jobr@localhost:543
 
 require './models/company.rb'
 require './models/job.rb'
+require './models/tag.rb'
 require './models/job_type.rb'
 require './models/area.rb'
 require './models/vacancy.rb'
