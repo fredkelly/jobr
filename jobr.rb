@@ -1,7 +1,9 @@
 require 'sinatra/assetpack'
+require "sinatra/json"
 
 class Jobr < Sinatra::Base
   set :root, File.dirname(__FILE__)
+  helpers Sinatra::JSON  
   register Sinatra::AssetPack
   
   assets {
@@ -57,7 +59,7 @@ class Jobr < Sinatra::Base
     results = []
     areas.each_index {|i| results << {'lat' => areas[i].lat, 'lng' => areas[i].lng, 'number' => vacancies[i].number}}
 
-    results.to_s
+    json results
   end
 
 end
