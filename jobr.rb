@@ -39,6 +39,11 @@ class Jobr < Sinatra::Base
     haml :results
   end
   
+  get '/tag/:id' do
+    @jobs = Tag.first(id: params[:id]).jobs
+    haml :results
+  end
+  
   get '/job/:id' do
     @job = Job.first(id: params[:id])
     haml :listing

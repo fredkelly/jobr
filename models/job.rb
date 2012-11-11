@@ -16,6 +16,11 @@ class Job
   belongs_to :company
   belongs_to :job_type
   
+  has n, :tags, :through => Resource
+  
+  # ensure tags are loaded
+  after :save, :tags
+  
   alias_method :to_s, :title
   
   def short_description
@@ -26,10 +31,15 @@ class Job
     description.gsub("\n", '<br />')
   end
   
-  def terms
-    unless @terms
+  def tags
+    if super.empty?
       zemanta = ::TermExtraction::Zemanta.new(:api_key => 'vvflwgaafjrfvfjrqafb2uts', :context => description)
+      set_tags zemanta.terms.map(&:strip)
     end
-    @terms = zemanta.terms
+    super
+  end
+  
+  def set_tags(tags)
+    update(:tags => tags.map{|tag| Tag.first_or_create(:name => tag.downcase)})
   end
 end
