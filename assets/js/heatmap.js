@@ -25,7 +25,7 @@ $(function() {
       });
 
       heatmap.setMap(map);
-
+      heatmap.setOptions({opacity: 0.75, radius: 10});
   });
 
 });

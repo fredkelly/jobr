@@ -16,4 +16,5 @@
             %time(datetime="#{job.created_at}")= job.created_at.to_time.ago_in_words
         
 #aside
+  = partial :job_score
   = partial :map
