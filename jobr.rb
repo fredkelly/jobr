@@ -41,6 +41,7 @@ class Jobr < Sinatra::Base
   
   get '/search' do
     @jobs = Job.search(params[:title], params[:area])
+    @score = JobType.score(params[:area])
     haml :results
   end
   
