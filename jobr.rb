@@ -56,11 +56,10 @@ class Jobr < Sinatra::Base
     jobs = Job.all(:title.like => "%#{params[:title]}%")
     sorted_jobs = {}
     jobs.each do |job|
-      sorted_jobs[job.job_type] = Array(sorted_jobs[job.job_type]) << job
+      sorted_jobs[job.job_type.id] = Array(sorted_jobs[job.job_type.id]) << job
     end
-    job_type = sorted_jobs.sort.keys.first
 
-    vacancies = Vacancy.all(:job_type_id => jsorted_jobs.keys.first)
+    vacancies = Vacancy.all(:job_type_id => sorted_jobs.keys.sort.first)
     areas = Area.all
 
     results = []
