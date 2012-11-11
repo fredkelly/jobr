@@ -222,7 +222,7 @@ ol#results {
     }
   }
   
-  .terms {
+  .tags {
     margin-top: 1em;
     font-size: .8em;
     font-weight: bold;
@@ -230,11 +230,13 @@ ol#results {
     li {
       display: inline-block;
       margin: 0 .5em .5em 0;
-      padding: 0 5px;
-      background: #da6c00;
-      @include border-radius(3px);
-      border: 1px solid rgba(0,0,0,0.2);
-      color: #fff;
+      a {
+        color: #fff;
+        padding: 0 5px;
+        background: #da6c00;
+        @include border-radius(3px);
+        border: 1px solid rgba(0,0,0,0.2);
+      }
     }
   }
 }

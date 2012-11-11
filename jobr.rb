@@ -35,7 +35,12 @@ class Jobr < Sinatra::Base
   end
   
   get '/search' do
-    @jobs = Job.all('area.name.like' => "%#{params[:area]}%")
+    @jobs = Job.search(params[:title], params[:area])
+    haml :results
+  end
+  
+  get '/tag/:id' do
+    @jobs = Tag.first(id: params[:id]).jobs
     haml :results
   end
   
