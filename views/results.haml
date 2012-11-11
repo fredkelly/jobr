@@ -16,6 +16,6 @@
             %time(datetime="#{job.created_at}")= job.created_at.to_time.ago_in_words
         
 #aside
-  - score = rand(11)
+  - score = 8
   #score(class="#{'high' if score > 5}") #{score}/10
   #map{:style => 'height:300px; width: 300px;'} Map loading...
