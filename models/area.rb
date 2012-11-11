@@ -3,6 +3,8 @@ class Area
 
   property :id, Serial
   property :name, String
+  property :lat, Float
+  property :lng, Float
 
   has n, :jobs
   
