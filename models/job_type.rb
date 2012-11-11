@@ -12,7 +12,7 @@ class JobType
 #    return area[0].id
     #SELECT * FROM vacancies WHERE area_id = 1 AND job_type_id = 1 ORDER BY date
 #    sequence = Vacancy.all(:area_id => area[0].id, :job_type_id => self.id, :order => [ :date.desc ]) 
-    22
+    rand(11)
   end 
 
 end
