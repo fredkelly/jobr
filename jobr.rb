@@ -54,18 +54,11 @@ class Jobr < Sinatra::Base
   
   get '/areas/:role' do
     jobs = Job.all(:title.like => "%#{params[:title]}%")
+
     sorted_jobs = {}
-    jobs.each do |job|
-      sorted_jobs[job.job_type.id] = Array(sorted_jobs[job.job_type.id]) << job
-    end
+    jobs.each {|job| sorted_jobs[job.job_type.id] = Array(sorted_jobs[job.job_type.id]) << job}
 
-    vacancies = Vacancy.all(:job_type_id => sorted_jobs.keys.sort.first)
-    areas = Area.all
-
-    results = []
-    areas.each_index {|i| results << {'lat' => areas[i].lat, 'lng' => areas[i].lng, 'number' => vacancies[i].number}}
-
-    json results
+    json Vacancy.areas_by_job_type(sorted_jobs.keys.sort.first).map {|v| {:lat => v.lat, :lng => v.lng, :number => v.number}}
   end
 
 end

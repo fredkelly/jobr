@@ -5,5 +5,4 @@ class JobType
   property :name, String, :length => 256
 
   has n, :jobs
-
 end
