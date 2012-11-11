@@ -50,7 +50,7 @@ class Jobr < Sinatra::Base
   end
 
   get '/areas/:role' do
-    jobs = Job.all(:title.like => "%#{params[:role]}%")
+    jobs = Job.all(:title.like => "%#{params[:title]}%")
     vacancies = Vacancy.all(:job_type_id => jobs[0].job_type.id)
     areas = Area.all
 
