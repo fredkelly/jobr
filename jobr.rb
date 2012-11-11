@@ -19,9 +19,7 @@ class Jobr < Sinatra::Base
     js :application, '/js/application.js', [
       '//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', # jQuery
       '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization',
-      '/js/global.js'
-    ]
-    js :heatmap, '/js/heatmap.js', [
+      '/js/global.js',
       '/js/heatmap.js'
     ]
     
