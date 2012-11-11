@@ -1,28 +1,25 @@
 $(function() {
+        var heatmapData = [];
 
-    /* Data points defined as an array of LatLng objects */
-    var heatmapData = [
-      new google.maps.LatLng(37.782, -122.447),
-      new google.maps.LatLng(37.782, -122.445),
-      new google.maps.LatLng(37.782, -122.443),
-      new google.maps.LatLng(37.782, -122.441),
-      new google.maps.LatLng(37.782, -122.439),
-      new google.maps.LatLng(37.782, -122.437),
-      new google.maps.LatLng(37.782, -122.435),
-      new google.maps.LatLng(37.785, -122.447),
-      new google.maps.LatLng(37.785, -122.445),
-      new google.maps.LatLng(37.785, -122.443),
-      new google.maps.LatLng(37.785, -122.441),
-      new google.maps.LatLng(37.785, -122.439),
-      new google.maps.LatLng(37.785, -122.437),
-      new google.maps.LatLng(37.785, -122.435)
-    ];
+        var params = location.search.replace('?', '').split('&').map(function(val){
+            return val.split('=');
+        });
 
-    var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
+        console.log(params[0][1])
+        console.log("http://localhost:9393/areas/" + params[0][1])
+
+        $.ajax({url:"http://localhost:9393/areas/" + params[0][1], dataType:'json', timeout: 99999999, success:function(data)
+       {
+          for (i=0; i<data.length; i++){
+
+            heatmapData.push({location: new google.maps.LatLng(data[i].lat, data[i].lng), weight: data[i].number});
+          }
+
+          var unitedKingdom = new google.maps.LatLng(54.5780510, -3.4359730);
 
     map = new google.maps.Map(document.getElementById('map'), {
-      center: sanFrancisco,
-      zoom: 13,
+      center: unitedKingdom,
+      zoom: 5,
       disableDefaultUI: true,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
@@ -32,5 +29,10 @@ $(function() {
     });
 
     heatmap.setMap(map);
+
+
+       }
+       
+        });
 
 });

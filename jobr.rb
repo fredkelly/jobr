@@ -44,8 +44,15 @@ class Jobr < Sinatra::Base
     haml :listing
   end
 
-  get '/areas' do
-    Area.all.to_json
+  get '/areas/:role' do
+    jobs = Job.all(:title.like => "%#{params[:role]}%")
+    vacancies = Vacancy.all(:job_type_id => jobs[0].job_type.id)
+    areas = Area.all
+
+    results = []
+    areas.each_index {|i| results << {'lat' => areas[i].lat, 'lng' => areas[i].lng, 'number' => vacancies[i].number}}
+
+    results.to_s
   end
 
 end
